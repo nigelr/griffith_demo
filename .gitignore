@@ -1,0 +1,11 @@
+.DS_Store
+#config/database.yml
+log/*.log
+tmp/**/*
+tmp/*
+tmp/webrat*
+nbproject
+.idea
+db/schema.rb
+db/*.sqlite3
+/doc/app

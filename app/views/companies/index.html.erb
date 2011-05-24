@@ -1,0 +1,25 @@
+<% title "Companies" %>
+
+<%= form_tag companies_path, :method => :get %>
+Search:
+<%= text_field_tag "search", params[:search] %>
+<%= submit_tag "Search" %>
+
+<p>
+
+<table width="50%">
+  <tr>
+    <th>Name</th>
+    <th>Website</th>
+  </tr>
+  <% for company in @companies %>
+    <tr>
+      <td><%= link_to company.name, company %></td>
+      <td><%= company.website %></td>
+    </tr>
+  <% end %>
+</table>
+<p>
+    <%= will_paginate @companies %>
+</p>
+<p><%= link_to "New Company", new_company_path %></p>
